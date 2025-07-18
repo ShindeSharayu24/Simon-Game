@@ -61,9 +61,13 @@ function nextSequence() {
 }
 
 function playSound(name) {
-    let audio = new Audio(name + ".mp3");
-    audio.play();
- }
+  var audio = new Audio(name + ".mp3");
+  audio.currentTime = 0;
+  audio.play().catch(error => {
+    console.log("Playback prevented:", error);
+  });
+}
+
 
 function animatePress(currentColor) {
     $("#" + currentColor).addClass("pressed");
