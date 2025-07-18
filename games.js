@@ -5,13 +5,14 @@ var userClickedPattern = [];
 var started = false;
 var level = 0;
 
-$(document).keypress(function() {
+$("#start-btn").click(function () {
     if (!started) {
         $("#level-title").text("Level " + level);
         nextSequence();
         started = true;
     }
 });
+
 
 $(".btn").click(function() {
     var userChosenColor = $(this).attr("id");
@@ -60,7 +61,7 @@ function nextSequence() {
 }
 
 function playSound(name) {
-    let audio = new Audio( name + ".mp3");
+    let audio = new Audio("sounds/" + name + ".mp3");
     audio.play();
  }
 
