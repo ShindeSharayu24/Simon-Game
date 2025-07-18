@@ -1,27 +1,37 @@
 body {
   text-align: center;
   background-color: #011F3F;
+  margin: 0;
+  padding: 0;
 }
 
 #level-title {
   font-family: 'Press Start 2P', cursive;
-  font-size: 3rem;
-  margin:  5%;
+  font-size: 2.5rem;
+  margin: 5% 2%;
   color: #FEF2BF;
+  word-break: break-word;
 }
 
 .container {
-  display: block;
-  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
   margin: auto;
+}
 
+.row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .btn {
-  margin: 25px;
-  display: inline-block;
-  height: 200px;
-  width: 200px;
+  margin: 10px;
+  height: 150px;
+  width: 150px;
   border: 10px solid black;
   border-radius: 20%;
 }
@@ -50,4 +60,31 @@ body {
 .pressed {
   box-shadow: 0 0 20px white;
   background-color: grey;
+}
+
+/* Medium Devices (Tablets) */
+@media (max-width: 768px) {
+  #level-title {
+    font-size: 2rem;
+  }
+
+  .btn {
+    height: 120px;
+    width: 120px;
+    margin: 10px;
+  }
+}
+
+/* Small Devices (Phones) */
+@media (max-width: 480px) {
+  #level-title {
+    font-size: 1.5rem;
+    margin: 8% 1%;
+  }
+
+  .btn {
+    height: 90px;
+    width: 90px;
+    margin: 8px;
+  }
 }
